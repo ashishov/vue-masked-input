@@ -88,7 +88,7 @@ export default {
         } else {
           this.maskCore = new InputMask({
             pattern: this.mask,
-            value: '',
+            value: this.value,
             placeholderChar: this.placeholderChar,
             /* eslint-disable quote-props */
             formatCharacters: {
@@ -130,9 +130,6 @@ export default {
             }
           });
         }
-        [].concat(_toConsumableArray(this.$refs.input.value)).reduce(function (memo, item) {
-          return _this.maskCore.input(item);
-        }, null);
         this.maskCore.setSelection({
           start: 0,
           end: 0
